@@ -3,7 +3,7 @@ import {withAuth0} from '@auth0/auth0-react';
 import axios from 'axios';
 
 export class Content extends Component {
-    omponentcDidMount = () => {
+  componentDidMount = () => {
         if(this.props.auth0.isAuthenticated) {
           this.props.auth0.getIdTokenClaims()
           .then(res => {
@@ -12,7 +12,7 @@ export class Content extends Component {
               headers: {"Authorization" : `Bearer ${jwt}`},
               method: 'get',
               baseURL: process.env.REACT_APP_SERVER_URL,
-              url: '/authorize'
+              url: 'https://auth0-11.herokuapp.com/authorize'
             }
             axios(config)
               .then(axiosResults => console.log(axiosResults.data))
