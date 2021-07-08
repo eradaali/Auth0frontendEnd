@@ -1,3 +1,6 @@
+
+import BestBooks from './components/ BestBooks'
+// import React, { Component } from 'react'
 import React from 'react';
 import Header from './Header';
 import IsLoadingAndError from './IsLoadingAndError';
@@ -67,7 +70,10 @@ class App extends React.Component {
             <Content />
           </Route>
         </Switch>
+        <BestBooks/>
+
        
+
             <Footer />
           </IsLoadingAndError>
         </Router>
