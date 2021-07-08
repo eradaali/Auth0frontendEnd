@@ -12,7 +12,7 @@ export class Content extends Component {
               headers: {"Authorization" : `Bearer ${jwt}`},
               method: 'get',
               baseURL: process.env.REACT_APP_SERVER_URL,
-              url: '/authorize'
+              url: 'https://auth0-thursday.herokuapp.com/'
             }
             axios(config)
               .then(axiosResults => console.log(axiosResults.data))
