@@ -26,8 +26,8 @@ this.setState({
 })
 }
 sendRequest=(e)=>{
-    e.preventDeffault();
-    const   url=`http://localhost:8000/books?email=erada.abdalrhman@gmail.com`;
+    e.preventDefault() 
+    const   url=`http://localhost:8000/books?email=${this.state.email}`;
      axios.get(url).then(response =>{
          this.setState({
              listOfBooks:response.data
