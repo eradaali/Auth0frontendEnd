@@ -11,14 +11,17 @@ import {
   Route
 } from "react-router-dom";
 
+
 import { withAuth0 } from '@auth0/auth0-react';
 import LoginButton from './components/LoginButton';
 import Content from './components/Content';
 import Home from './components/Home';
 import Profile from './components/Profile';
 import LogoutButton from './components/LogoutButton';
-import { Link } from 'react-router-dom';
+import { Component,Link } from 'react-router-dom';
 import  './App.css';
+import Form from './From';
+
 class App extends React.Component {
 
   render() {
@@ -26,6 +29,7 @@ class App extends React.Component {
     return(
       <>
         <Router>
+        <Header />
         <nav>
           <ul>
             <li>
@@ -48,7 +52,7 @@ class App extends React.Component {
           </ul>
         </nav>
           <IsLoadingAndError>
-            <Header />
+          
             
             <Switch>
           <Route exact path='/'>
@@ -62,10 +66,14 @@ class App extends React.Component {
           </Route>
           <Route path='/profile'>
             <Profile />
+            <Form/>
             <Content />
           </Route>
         </Switch>
         <BestBooks/>
+
+       
+
             <Footer />
           </IsLoadingAndError>
         </Router>
